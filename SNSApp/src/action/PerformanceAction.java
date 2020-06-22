@@ -14,7 +14,7 @@ public abstract class PerformanceAction extends Action {
     @Override
     protected String processRequest(HttpServletRequest request)
             throws ParamCheckException, DBAccessException, DataInconsistencyException, SessionDisconnectionException {
-        if(LoginValidator.checkSession(request)) {
+        if(!LoginValidator.checkSession(request)) {
             //ログイン済みでなければ、セッションを破棄してエラーページに遷移
             throw new SessionDisconnectionException(ErrorCodeConstValue.SESSION_DISCONNECT_ERR);
         }
