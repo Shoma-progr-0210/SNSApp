@@ -45,7 +45,7 @@ public class UserMasterDAO {
 
                 //UserEntityオブジェクトに値をセット
                 userEntity.setUserId(rs.getString("USER_ID"));
-                userEntity.setPassWord(rs.getString("PASSWORD"));
+                userEntity.setPassword(rs.getString("PASSWORD"));
             }
         }catch (SQLException e) {
             throw new DBAccessException(ErrorCodeConstValue.DB_ERR);

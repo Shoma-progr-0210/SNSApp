@@ -42,4 +42,9 @@ public class ErrorCodeConstValue {
      */
     public static final String PASSWORD_TYPE_ERR = "0104";
 
+    /**
+     * セッションが切断されました。もう一度ログインからやり直してください。
+     */
+    public static final String SESSION_DISCONNECT_ERR = "0601";
+
 }
