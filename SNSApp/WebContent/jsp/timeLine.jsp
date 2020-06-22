@@ -10,7 +10,10 @@
   <div id="top" class="top">
     <jsp:include page="/jsp/top.jsp" />
   </div>
-  <div>
+    <div id="side" class="side">
+    <jsp:include page="/jsp/SNSAppSide.jsp" />
+  </div>
+  <div align="center">
     <h3>タイムライン画面に遷移成功</h3>
   </div>
 </body>
