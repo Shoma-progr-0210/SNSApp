@@ -22,6 +22,8 @@ public class ActionFactory {
             return new LoginAction();
         case "message":
             return new MessageAction();
+        case "timeLine":
+            return new timeLineAction();
         default:
             return null;
         }
