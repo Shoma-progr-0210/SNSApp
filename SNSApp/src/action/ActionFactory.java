@@ -20,7 +20,8 @@ public class ActionFactory {
         //引数が「login」の時、LoginActionオブジェクトを返却
         case "login":
             return new LoginAction();
-
+        case "message":
+            return new MessageAction();
         default:
             return null;
         }
