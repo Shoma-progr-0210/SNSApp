@@ -27,7 +27,7 @@ public class UserEntity implements Serializable{
     /**
      * @param password セットする password
      */
-    public void setPassWord(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
