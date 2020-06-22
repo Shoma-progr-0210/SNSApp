@@ -23,7 +23,7 @@ public class ActionFactory {
         case "message":
             return new MessageAction();
         case "timeLine":
-            return new timeLineAction();
+            return new TimeLineAction();
         default:
             return null;
         }
