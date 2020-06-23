@@ -3,7 +3,6 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 
 import javax.sql.DataSource;
 
@@ -14,13 +13,8 @@ public class MessageInfoDAO {
 
     public boolean insertMessageInfo(String userNo,String message) throws DBAccessException{
 
-        //int insert = 0;//実行件数カウンタ
-
         String sql = "insert into message_info(USER_NO, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT) "
-                + "values( ?, ?, 0, "
-                +LocalDateTime.now()
-                +", "
-                +LocalDateTime.now();
+                + "values( ?, ?, 0, LOCALTIMESTAMP(), LOCALTIMESTAMP())";
 
 
         //データソースを取得
