@@ -3,6 +3,7 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import entity.UserAccountEntity;
 import entity.UserEntity;
 import service.LoginService;
 import util.DBAccessException;
@@ -37,8 +38,13 @@ public class LoginAction extends Action {
             //セッション開始
             HttpSession session = request.getSession(true);
 
-            //ユーザ情報をセッションに設定
+            //ユーザアカウント情報を取得
+            UserAccountEntity userAccountEntity = new UserAccountEntity();
+
+            //ユーザログイン情報をセッションに設定
             session.setAttribute("userEntity", userEntity);
+            //ユーザアカウント情報をセッションに設定
+            session.setAttribute("userAcoountEntity", userAccountEntity);
 
             //遷移先URLを返す
             url = "/jsp/timeLine.jsp";
