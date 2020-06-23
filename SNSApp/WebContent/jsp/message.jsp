@@ -20,7 +20,7 @@ class="entity.UserAccountEntity"/>
     <form action="/SNSApp/control" method="POST" class="message">
       <input type="hidden" name="action_name" value="sendMessage">
 <%= userAccountEntity.getChatName() %>のメッセージ：<br>
-<textarea name="message" rows="8" cols="25"></textarea><br>
+<textarea name="message" rows="8" cols="25" maxlength = "200"></textarea><br>
 <input type="submit" value="メッセージを送信"><input type="reset" value="リセット">
 </form>
   </div>
