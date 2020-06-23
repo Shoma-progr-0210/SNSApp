@@ -3,7 +3,7 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import entity.UserEntity;
+import entity.UserAccountEntity;
 import service.PerformanceService;
 import util.DBAccessException;
 import util.DataInconsistencyException;
@@ -22,15 +22,15 @@ public class SendMessageAction extends PerformanceAction {
         HttpSession session =  request.getSession(false);
 
         //セッションからユーザログイン情報を取得
-        UserEntity userEntity = (UserEntity) session.getAttribute("userEntity");
+        UserAccountEntity userAccountEntity = (UserAccountEntity) session.getAttribute("userAccountEntity");
 
         //ログイン情報からユーザIDを取得
-        String userId = userEntity.getUserId();
+        String userNo = userAccountEntity.getUserNo();
         //リクエストからメッセージを取得
         String message = request.getParameter("message");
 
         //メッセージが送信出来なかった場合、エラーをスロー
-        if (!PerService.insertMessageInfo(userId, message)) {
+        if (!PerService.insertMessageInfo(userNo, message)) {
             throw new DataInconsistencyException(ErrorCodeConstValue.SEND_MESSAGE_ERR);
         }
 
