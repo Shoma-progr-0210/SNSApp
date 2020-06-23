@@ -46,7 +46,7 @@ public class LoginAction extends Action {
             //ユーザログイン情報をセッションに設定
             session.setAttribute("userEntity", userEntity);
             //ユーザアカウント情報をセッションに設定
-            session.setAttribute("userAcoountEntity", userAccountEntity);
+            session.setAttribute("userAccountEntity", userAccountEntity);
 
             //遷移先URLを返す
             url = "/jsp/timeLine.jsp";
