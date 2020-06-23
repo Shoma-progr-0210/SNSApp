@@ -47,4 +47,9 @@ public class ErrorCodeConstValue {
      */
     public static final String SESSION_DISCONNECT_ERR = "0601";
 
+    /*
+     * メッセージは200文字以下で入力して下さい。
+     */
+    public static final String MESSAGE_LENGTH_ERR = "0701";
+
 }
