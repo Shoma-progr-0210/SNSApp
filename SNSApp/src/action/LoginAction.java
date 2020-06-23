@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import entity.UserAccountEntity;
 import entity.UserEntity;
 import service.LoginService;
+import service.PerformanceService;
 import util.DBAccessException;
 import util.DataInconsistencyException;
 import util.ErrorCodeConstValue;
@@ -15,6 +16,7 @@ import util.SessionDisconnectionException;
 public class LoginAction extends Action {
 
     private final LoginService logService = new LoginService();
+    private final PerformanceService PerService = new PerformanceService();
 
     @Override
     protected String processRequest(HttpServletRequest request)
@@ -39,7 +41,7 @@ public class LoginAction extends Action {
             HttpSession session = request.getSession(true);
 
             //ユーザアカウント情報を取得
-            UserAccountEntity userAccountEntity = new UserAccountEntity();
+            UserAccountEntity userAccountEntity = PerService.userInfo(userId);
 
             //ユーザログイン情報をセッションに設定
             session.setAttribute("userEntity", userEntity);
