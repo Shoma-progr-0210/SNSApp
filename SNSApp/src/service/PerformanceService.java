@@ -1,7 +1,10 @@
 package service;
 
+import java.util.ArrayList;
+
 import dao.MessageInfoDAO;
 import dao.UserInfoDAO;
+import entity.MessageEntity;
 import entity.UserAccountEntity;
 import util.DBAccessException;
 import util.ParamCheckException;
@@ -48,7 +51,7 @@ public class PerformanceService {
      * @throws DBAccessException
      * @throws ParamCheckException
      */
-    public boolean selectAllMessageInfo() throws DBAccessException, ParamCheckException{
+    public ArrayList<MessageEntity> selectAllMessageInfo() throws DBAccessException, ParamCheckException{
 
         return msgDao.selectAllMessageInfo();
     }
