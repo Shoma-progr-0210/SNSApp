@@ -69,7 +69,7 @@ public class MessageInfoDAO {
         //メッセージオブジェクトリストを生成
         ArrayList<MessageEntity> messageEntityList = new ArrayList<MessageEntity>();
 
-        String sql = "SELECT * MESSAGE_INFO;";
+        String sql = "SELECT * FROM MESSAGE_INFO;";
 
         //データソースを取得
         DataSource ds = DataSourceSupplier.getDataSource();
@@ -79,15 +79,6 @@ public class MessageInfoDAO {
 
             //SQL実行
             try (ResultSet rs = ps.executeQuery()){
-
-                //ResultSetのカーソルを1行進める
-                if (!rs.next()) {
-                    //対象がない場合、処理を中断
-                    return null;
-                }
-
-                //カーソルを最初に戻す
-                rs.beforeFirst();
 
                 //UserEntityオブジェクトに値をセット
                 while (rs.next()) {
