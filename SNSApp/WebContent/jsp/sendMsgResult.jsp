@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>SNSApp/メッセージ送信完了</title>
+<META http-equiv="Refresh" content="2;URL=/SNSApp/control?action_name=timeLine">
 </head>
 <body>
-<div align="center">メッセージ送信完了</div>
+<div align="center" >メッセージ送信完了</div>
 </body>
 </html>
