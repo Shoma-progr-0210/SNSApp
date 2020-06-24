@@ -49,7 +49,7 @@ public class LoginAction extends Action {
             session.setAttribute("userAccountEntity", userAccountEntity);
 
             //遷移先URLを返す
-            url = "/control?action_name=timeLine";
+            url = "/jsp/welcome.jsp";
         }
         // TODO 自動生成されたメソッド・スタブ
         return url;
