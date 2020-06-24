@@ -1,6 +1,7 @@
 package service;
 
 import dao.MessageInfoDAO;
+import dao.UserInfoDAO;
 import entity.UserAccountEntity;
 import util.DBAccessException;
 import util.ParamCheckException;
@@ -11,7 +12,15 @@ public class PerformanceService {
     private final MessageInfoDAO msgDao = new MessageInfoDAO();
     private final UserInfoDAO userInfoDao = new UserInfoDAO();
 
-
+    /**
+     * メッセージ送信のDAOにアクセスするメソッド
+     *
+     * @param userNo
+     * @param message
+     * @return
+     * @throws DBAccessException
+     * @throws ParamCheckException
+     */
     public boolean insertMessageInfo(String userNo, String message) throws DBAccessException, ParamCheckException{
         //メッセージのチェック
         PerformanceValidator.checkMessage(message);
@@ -19,9 +28,28 @@ public class PerformanceService {
         return msgDao.insertMessageInfo(userNo, message);
     }
 
+    /**
+     * ユーザIDをキーにユーザのアカウント情報を取得するDAOにアクセスするメソッド
+     *
+     * @param userId
+     * @return
+     * @throws DBAccessException
+     * @throws ParamCheckException
+     */
     public UserAccountEntity userInfo(String userId) throws DBAccessException, ParamCheckException{
 
         return userInfoDao.getUserInfoByUserId(userId);
     }
 
+    /**
+     * タイムラインに表示するメッセージを全件取得するDAOにアクセスするメソッド
+     *
+     * @return
+     * @throws DBAccessException
+     * @throws ParamCheckException
+     */
+    public boolean selectAllMessageInfo() throws DBAccessException, ParamCheckException{
+
+        return msgDao.selectAllMessageInfo();
+    }
 }
