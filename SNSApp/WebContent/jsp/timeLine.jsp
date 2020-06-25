@@ -33,14 +33,15 @@
       <tr>
         <td>
 
-          <table border="none">
+          <table style="border-radius: 5px;border: 1px blue solid;">
             <tr>
-              <th><%=messageEntity.getUserNo() %>
-              投稿日時：<%=messageEntity.getCreateDT() %>
-              更新日時：<%=messageEntity.getUpdateDT() %></th>
+              <th style="border-style: none;"><%=messageEntity.getUserNo() %>
+              <font size="1" >投稿日時：<%=messageEntity.getCreateDT() %>
+              更新日時：<%=messageEntity.getUpdateDT() %></font>
+              </th>
             </tr>
             <tr>
-              <td><%=messageEntity.getMessage() %></td>
+              <td style="border-style: none;"><%=messageEntity.getMessage() %></td>
             </tr>
           </table>
 
