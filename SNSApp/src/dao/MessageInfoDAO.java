@@ -69,7 +69,8 @@ public class MessageInfoDAO {
         //メッセージオブジェクトリストを生成
         ArrayList<MessageEntity> messageEntityList = new ArrayList<MessageEntity>();
 
-        String sql = "SELECT * FROM MESSAGE_INFO;";
+        String sql = "SELECT * FROM MESSAGE_INFO"
+                + " ORDER BY CREATE_DT DESC;";
 
         //データソースを取得
         DataSource ds = DataSourceSupplier.getDataSource();
