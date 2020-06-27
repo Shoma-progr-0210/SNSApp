@@ -28,6 +28,8 @@ public class ActionFactory {
             return new SendMessageAction();
         case "setting":
             return new SettingAction();
+        case "settingUserAccount":
+            return new SettingAction();
         default:
             return null;
         }
