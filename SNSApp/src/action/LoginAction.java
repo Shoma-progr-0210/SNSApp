@@ -3,8 +3,10 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import entity.UserAccountEntity;
 import entity.UserEntity;
 import service.LoginService;
+import service.PerformanceService;
 import util.DBAccessException;
 import util.DataInconsistencyException;
 import util.ErrorCodeConstValue;
@@ -14,6 +16,7 @@ import util.SessionDisconnectionException;
 public class LoginAction extends Action {
 
     private final LoginService logService = new LoginService();
+    private final PerformanceService PerService = new PerformanceService();
 
     @Override
     protected String processRequest(HttpServletRequest request)
@@ -37,11 +40,16 @@ public class LoginAction extends Action {
             //セッション開始
             HttpSession session = request.getSession(true);
 
-            //ユーザ情報をセッションに設定
+            //ユーザアカウント情報を取得
+            UserAccountEntity userAccountEntity = PerService.userInfo(userId);
+
+            //ユーザログイン情報をセッションに設定
             session.setAttribute("userEntity", userEntity);
+            //ユーザアカウント情報をセッションに設定
+            session.setAttribute("userAccountEntity", userAccountEntity);
 
             //遷移先URLを返す
-            url = "/jsp/timeLine.jsp";
+            url = "/jsp/welcome.jsp";
         }
         // TODO 自動生成されたメソッド・スタブ
         return url;
