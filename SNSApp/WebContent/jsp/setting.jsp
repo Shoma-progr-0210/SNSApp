@@ -18,7 +18,7 @@
     <a href="control?action_name=timeLine">タイムラインへ戻る</a>
   </p>
   <p>
-    <a href="control?action_name=SettingUserAccount">アカウント情報</a>
+    <a href="control?action_name=settingUserAccount">アカウント情報</a>
   </p>
 </ul>
 </body>
