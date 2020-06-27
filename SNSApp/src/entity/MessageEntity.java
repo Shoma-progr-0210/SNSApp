@@ -1,6 +1,6 @@
 package entity;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class MessageEntity {
 
@@ -8,8 +8,8 @@ public class MessageEntity {
     private String userNo;
     private String message;
     private boolean delFlag;;
-    private LocalDateTime createDT;
-    private LocalDateTime updateDT;
+    private Timestamp createDT;
+    private Timestamp updateDT;
     /**
      * @return msgNo
      */
@@ -61,25 +61,25 @@ public class MessageEntity {
     /**
      * @return createDT
      */
-    public LocalDateTime getCreateDT() {
+    public Timestamp getCreateDT() {
         return createDT;
     }
     /**
      * @param createDT セットする createDT
      */
-    public void setCreateDT(LocalDateTime createDT) {
+    public void setCreateDT(Timestamp createDT) {
         this.createDT = createDT;
     }
     /**
      * @return updateDT
      */
-    public LocalDateTime getUpdateDT() {
+    public Timestamp getUpdateDT() {
         return updateDT;
     }
     /**
      * @param updateDT セットする updateDT
      */
-    public void setUpdateDT(LocalDateTime updateDT) {
+    public void setUpdateDT(Timestamp updateDT) {
         this.updateDT = updateDT;
     }
 
