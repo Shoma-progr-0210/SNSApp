@@ -24,6 +24,12 @@ public class ActionFactory {
             return new MessageAction();
         case "timeLine":
             return new TimeLineAction();
+        case "sendMessage":
+            return new SendMessageAction();
+        case "setting":
+            return new SettingAction();
+        case "settingUserAccount":
+            return new SettingUserAccountAction();
         default:
             return null;
         }
