@@ -30,13 +30,16 @@ UPDATE_DT timestamp,
 foreign key (USER_NO) references USER_INFO(USER_NO)
 );
 
+
+insert into USER_MASTER values('tester', 'testtest');
+insert into USER_INFO values('tester', 'FamilyName', 'FirstName', '20200627','testSNSApp');
+insert into message(USER_NO, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT)
+ values('tester','Hello, This is SNSApp.', 0, LOCALTIMESTAMP(), LOCALTIMESTAMP());
+ 
 select * from user_master;
 select * from user_info;
 select * from message;
+ 
 
-insert into USER_MASTER values('test', 'testtest');
-insert into USER_INFO values('test', 'FamilyName', 'FirstName', '20200627','testSNSApp');
-insert into message(USER_NO, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT)
- values('test','Hello, This is SNSApp.', 0, LOCALTIMESTAMP(), LOCALTIMESTAMP());
 
 
