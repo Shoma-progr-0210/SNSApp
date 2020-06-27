@@ -10,16 +10,8 @@
   <div id="top" class="top">
     <jsp:include page="/jsp/top.jsp" />
   </div>
-<div id="setting_area" class="setting_side_title">
-  <h3>設定メニュー</h3>
-</div>
-<ul class="setting_side_area">
-  <p>
-    <a href="control?action_name=timeLine">タイムラインへ戻る</a>
-  </p>
-  <p>
-    <a href="control?action_name=settingUserAccount">アカウント情報</a>
-  </p>
-</ul>
+  <div id="settingSide" class="settingSide">
+    <jsp:include page="/jsp/settingSide.jsp" />
+  </div>
 </body>
 </html>
