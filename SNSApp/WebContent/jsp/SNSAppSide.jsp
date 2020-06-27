@@ -11,6 +11,9 @@
   <p>
     <a href="control?action_name=timeLine">タイムライン</a>
   </p>
+    <p>
+    <a href="control?action_name=setting">設定</a>
+  </p>
   <p>
     <a href="control?action_name=logout">ログアウト</a>
   </p>
