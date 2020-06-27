@@ -29,7 +29,7 @@ public class ActionFactory {
         case "setting":
             return new SettingAction();
         case "settingUserAccount":
-            return new SettingAction();
+            return new SettingUserAccountAction();
         default:
             return null;
         }
