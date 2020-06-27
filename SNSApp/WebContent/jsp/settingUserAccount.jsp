@@ -12,8 +12,8 @@
   <div id="top" class="top">
     <jsp:include page="/jsp/top.jsp" />
   </div>
-  <div id="setting" class="setting">
-    <jsp:include page="/jsp/setting.jsp" />
+  <div id="settingSide" class="settingSide">
+    <jsp:include page="/jsp/settingSide.jsp" />
   </div>
   <form action="/SNSApp/control" method="POST" class="userAccount">
     <input type="hidden" name="action_name" value="timeLine">
