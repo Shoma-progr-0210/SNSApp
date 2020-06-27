@@ -26,6 +26,8 @@ public class ActionFactory {
             return new TimeLineAction();
         case "sendMessage":
             return new SendMessageAction();
+        case "setting":
+            return new SettingAction();
         default:
             return null;
         }
