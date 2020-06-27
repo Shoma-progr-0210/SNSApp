@@ -16,12 +16,12 @@ class="entity.UserAccountEntity"/>
     <div id="side" class="side">
     <jsp:include page="/jsp/SNSAppSide.jsp" />
   </div>
-  <div>
+  <div align="center">
     <form action="/SNSApp/control" method="POST" class="message">
-      <input type="hidden" name="action_name" value="message">
+      <input type="hidden" name="action_name" value="sendMessage">
 <%= userAccountEntity.getChatName() %>のメッセージ：<br>
-<textarea name="kanso" rows="5" cols="40"></textarea><br>
-<input type="submit" value="Chatit"><input type="reset" value="リセット">
+<textarea name="message" rows="8" cols="25" maxlength = "200"></textarea><br>
+<input type="submit" value="メッセージを送信"><input type="reset" value="リセット">
 </form>
   </div>
 </body>
