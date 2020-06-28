@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>アカウント情報</title>
+<title>SNSApp/アカウント情報</title>
 </head>
 <body>
   <div id="top" class="top">
@@ -16,7 +16,7 @@
     <jsp:include page="/jsp/settingSide.jsp" />
   </div>
   <form action="/SNSApp/control" method="POST" class="userAccount">
-    <input type="hidden" name="action_name" value="timeLine">
+    <input type="hidden" name="action_name" value="updateUserAccount">
     <table>
       <tr>
         <th>アカウント情報</th>
