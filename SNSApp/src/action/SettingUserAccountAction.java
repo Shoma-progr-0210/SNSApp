@@ -8,15 +8,14 @@ import service.PerformanceService;
 import util.DBAccessException;
 import util.DataInconsistencyException;
 import util.ParamCheckException;
-import util.SessionDisconnectionException;
 
-public class SettingUserAccountAction extends Action {
+public class SettingUserAccountAction extends PerformanceAction {
 
     private final PerformanceService PerService = new PerformanceService();
 
     @Override
-    protected String processRequest(HttpServletRequest request)
-            throws ParamCheckException, DBAccessException, DataInconsistencyException, SessionDisconnectionException {
+    protected String processPerformanceManagement(HttpServletRequest request)
+            throws ParamCheckException, DBAccessException, DataInconsistencyException{
 
         //セッション継続
         HttpSession session = request.getSession(false);
