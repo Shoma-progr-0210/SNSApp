@@ -19,25 +19,31 @@
     <input type="hidden" name="action_name" value="updateUserAccount">
     <table>
       <tr>
+      <th></th>
         <th>アカウント情報</th>
       </tr>
       <tr>
+      <td>ユーザNo</td>
         <td><input type="text" name="userNo"
-          value="<%=userAccountEntity.getUserNo()%>"></td>
+          value="<%=userAccountEntity.getUserNo()%>" disabled></td>
       </tr>
       <tr>
+            <td>苗字</td>
         <td><input type="text" name="familyName"
           value="<%=userAccountEntity.getFamilyName()%>"></td>
       </tr>
       <tr>
+            <td>名前</td>
         <td><input type="text" name="firstName"
           value="<%=userAccountEntity.getFirstName()%>"></td>
       </tr>
       <tr>
-        <td><input type="text" name="birthday"
+            <td>生年月日</td>
+        <td><input type="date" name="birthday" pattern="\d{4}-?\d{2}-?\d{2}"
           value="<%=userAccountEntity.getBirthday()%>"></td>
       </tr>
       <tr>
+            <td>チャットネーム</td>
         <td><input type="text" name="chatName"
           value="<%=userAccountEntity.getChatName()%>"></td>
       </tr>
