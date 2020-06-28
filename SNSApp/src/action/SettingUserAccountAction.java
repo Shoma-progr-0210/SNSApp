@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import entity.UserAccountEntity;
+import entity.UserEntity;
 import service.PerformanceService;
 import util.DBAccessException;
 import util.DataInconsistencyException;
@@ -21,10 +22,10 @@ public class SettingUserAccountAction extends PerformanceAction {
         HttpSession session = request.getSession(false);
 
         //セッションからユーザのアカウント情報を取得
-        UserAccountEntity oldUserAccountEntity = (UserAccountEntity) session.getAttribute("userAccountEntity");
+        UserEntity UserEntity = (UserEntity) session.getAttribute("userEntity");
 
         //ユーザアカウント情報からユーザNOを取得
-        String userId = oldUserAccountEntity.getUserNo();
+        String userId = UserEntity.getUserId();
 
         //ユーザアカウント情報を取得
         UserAccountEntity userAccountEntity = PerService.userInfo(userId);
