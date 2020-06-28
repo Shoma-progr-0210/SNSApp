@@ -55,4 +55,17 @@ public class PerformanceService {
 
         return msgDao.selectAllMessageInfo();
     }
+
+    /**
+     * ユーザアカウント情報を変更するDAOにアクセスするメソッド
+     *
+     * @param updateUserAccountEntity
+     * @return
+     * @throws DBAccessException
+     * @throws ParamCheckException
+     */
+    public boolean updateUserInfo(UserAccountEntity updateUserAccountEntity) throws DBAccessException, ParamCheckException {
+
+        return userInfoDao.updateUserInfo(updateUserAccountEntity);
+    }
 }
