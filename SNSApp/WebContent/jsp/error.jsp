@@ -10,6 +10,9 @@
   <div id="top" class="top">
     <jsp:include page="/jsp/top.jsp" />
   </div>
+    <div id="side" class="side">
+    <jsp:include page="/jsp/SNSAppSide.jsp" />
+  </div>
   <div id="error" align="center">
     <div class="error_title">
       <h2>エラー</h2>
