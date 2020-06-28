@@ -57,4 +57,9 @@ public class ErrorCodeConstValue {
      */
     public static final String SEND_MESSAGE_ERR = "0702";
 
+    /*
+     * ユーザアカウント情報を変更出来ませんでした。
+     */
+    public static final String UPDATE_USERACCOUNT_ERR = "0801";
+
 }
