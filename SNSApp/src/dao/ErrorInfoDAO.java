@@ -49,7 +49,7 @@ public class ErrorInfoDAO {
                 }
 
                 //UserEntityオブジェクトを作成して、値をセット
-                errorMsg = rs.getString("ERROR_NAME");
+                errorMsg = rs.getString("ERROR_WORDS");
 
             }
         } catch (SQLException e) {
