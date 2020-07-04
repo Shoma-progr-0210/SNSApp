@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "left main"
+    "left main";
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+}
+
+.top {
+    grid-area: header;
+    background-color: #abd9f0;
+}
+
+.side {
+    grid-area: left;
+    background-color: #98fb98;
+}
+
+.main {
+    grid-area: main;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color: #e6e6fa;*/
+}
+
+/*footer {
+    grid-area: footer;
+    background-color: #7fffd4;
+}*/
