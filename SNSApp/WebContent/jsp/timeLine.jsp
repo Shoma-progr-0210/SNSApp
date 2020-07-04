@@ -15,6 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SNSApp/タイムライン</title>
+<link rel="stylesheet" type="text/css" href="./css/common.css">
 </head>
 <body>
   <div id="top" class="top">
@@ -23,7 +24,7 @@
   <div id="side" class="side">
     <jsp:include page="/jsp/SNSAppSide.jsp" />
   </div>
-  <div align="center">
+  <div id="main" class="main">
     <%DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); %>
     <%SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"); %>
     <h3>
