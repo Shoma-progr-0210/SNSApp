@@ -15,7 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SNSApp/タイムライン</title>
-<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/grid.css">
 </head>
 <body>
   <div id="top" class="top">
@@ -38,14 +38,14 @@
       <tr>
         <td>
 
-          <table style="border-radius: 5px; border: 1px blue solid;">
+          <table class="message" >
             <tr>
-              <th style="border-style: none;"><%=messageEntity.getUserNo() %>
+              <th><%=messageEntity.getUserNo() %>
                 <font size="1">投稿日時：<%=sdf.format(messageEntity.getCreateDT()) %>
                   更新日時：<%=sdf.format(messageEntity.getUpdateDT()) %></font></th>
             </tr>
             <tr>
-              <td style="border-style: none;"><%=messageEntity.getMessage() %></td>
+              <td><%=messageEntity.getMessage() %></td>
             </tr>
           </table>
 
