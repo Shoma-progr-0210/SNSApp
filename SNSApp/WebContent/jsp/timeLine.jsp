@@ -40,7 +40,7 @@
 
           <table class="message" >
             <tr>
-              <th><%=messageEntity.getUserNo() %>
+              <th><%=messageEntity.getChatName() %>
                 <font size="1">投稿日時：<%=sdf.format(messageEntity.getCreateDT()) %>
                   更新日時：<%=sdf.format(messageEntity.getUpdateDT()) %></font></th>
             </tr>
