@@ -23,6 +23,7 @@ ERROR_WORDS varchar(100) not null
 create table MESSAGE_INFO(
 MSG_NO int(6) UNSIGNED ZEROFILL primary key AUTO_INCREMENT,
 USER_NO char(12),
+CHAT_NAME varchar(16),
 MESSAGE varchar(200),
 DEL_FLG boolean,
 CREATE_DT timestamp,
@@ -32,9 +33,15 @@ foreign key (USER_NO) references USER_INFO(USER_NO)
 
 
 insert into USER_MASTER values('tester', 'testtest');
+insert into USER_MASTER values('updater', 'updatetest');
+
 insert into USER_INFO values('tester', 'FamilyName', 'FirstName', '20200627','testSNSApp');
-insert into message_INFO(USER_NO, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT)
- values('tester','Hello, This is SNSApp.', 0, LOCALTIMESTAMP(), LOCALTIMESTAMP());
+insert into USER_INFO values('updater', 'update', 'uptest', '20200628','updatetest');
+
+insert into message_INFO(USER_NO, CHAT_NAME, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT)
+ values('tester','testSNSApp', 'Hello, This is SNSApp.', 0, LOCALTIMESTAMP(), LOCALTIMESTAMP());
+insert into message_INFO(USER_NO, CHAT_NAME, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT)
+ values('updater', 'updatetest', 'Hello, Im updater.', 0, LOCALTIMESTAMP(), LOCALTIMESTAMP());
  
 insert into error_info values('1001','DBアクセスエラーです。');
 insert into error_info values('0105','該当するユーザが存在しません。ログインに失敗しました。');
@@ -45,11 +52,11 @@ insert into error_info values('0104','パスワードは半角英数字で入力
 insert into error_info values('0601','セッションが切断されました。もう一度ログインからやり直してください。');
 insert into error_info values('0701','メッセージは200文字以下で入力して下さい。');
 insert into error_info values('0702','メッセージが送信出来ませんでした。');
+insert into error_info values('0801','ユーザアカウント情報を変更出来ませんでした。');
 
 
 select * from user_master;
 select * from user_info;
 select * from message_INFO;
- 
-
+select * from error_info;
 
