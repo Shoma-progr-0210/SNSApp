@@ -6,8 +6,9 @@ public class MessageEntity {
 
     private String msgNo;
     private String userNo;
+    private String chatName;
     private String message;
-    private boolean delFlag;;
+    private boolean delFlag;
     private Timestamp createDT;
     private Timestamp updateDT;
     /**
@@ -33,6 +34,18 @@ public class MessageEntity {
      */
     public void setUserNo(String userNo) {
         this.userNo = userNo;
+    }
+    /**
+     * @return chatName
+     */
+    public String getChatName() {
+        return chatName;
+    }
+    /**
+     * @param chatName セットする chatName
+     */
+    public void setChatName(String chatName) {
+        this.chatName = chatName;
     }
     /**
      * @return message
