@@ -30,8 +30,11 @@ public class MessageInfoDAO {
      */
     public boolean insertMessageInfo(String userNo,String message) throws DBAccessException{
 
-        String sql = "insert into message_info(USER_NO, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT) "
-                + "values( ?, ?, 0, LOCALTIMESTAMP(), LOCALTIMESTAMP())";
+        String sql = "insert into message_info(USER_NO, chat_name, MESSAGE, DEL_FLG, CREATE_DT, UPDATE_DT) " +
+                "select ? as user_no, chat_name, ? as message, " +
+                "0 as del_flg, LOCALTIMESTAMP() as create_dt, LOCALTIMESTAMP() as update_dt " +
+                "from user_info " +
+                "where user_no = ?;";
 
 
         //データソースを取得
@@ -43,6 +46,7 @@ public class MessageInfoDAO {
             //SQL文のプレースホルダに値をセット
             ps.setString(1, userNo);
             ps.setString(2, message);
+            ps.setString(3, userNo);
 
             //SQL実行
             int insert = ps.executeUpdate();
@@ -89,6 +93,7 @@ public class MessageInfoDAO {
                     //DBから取得したメッセージ情報をセット
                     messageEntity.setUserNo(rs.getString("USER_NO"));
                     messageEntity.setMsgNo(rs.getString("MSG_NO"));
+                    messageEntity.setChatName(rs.getString("CHAT_NAME"));
                     messageEntity.setMessage(rs.getString("MESSAGE"));
                     messageEntity.setDelFlag(rs.getBoolean("DEL_FLG"));
                     messageEntity.setCreateDT(rs.getTimestamp("CREATE_DT"));
