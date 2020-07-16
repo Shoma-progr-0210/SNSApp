@@ -18,13 +18,15 @@
     <jsp:include page="/jsp/SNSAppSide.jsp" />
   </div>
   <div id="message" class="main">
-    <form action="/SNSApp/control" method="POST" >
-      <input type="hidden" name="action_name" value="sendMessage">
-      <%= userAccountEntity.getChatName() %>のメッセージ：<br>
-      <textarea name="message" rows="8" cols="25" maxlength="200"></textarea>
-      <br> <input type="submit" value="メッセージを送信"><input
-        type="reset" value="リセット">
-    </form>
+    <div class="main_container">
+      <form action="/SNSApp/control" method="POST">
+        <input type="hidden" name="action_name" value="sendMessage">
+        <%= userAccountEntity.getChatName() %>のメッセージ：<br>
+        <textarea name="message" rows="8" cols="25" maxlength="200"></textarea>
+        <br> <input type="submit" value="メッセージを送信"><input
+          type="reset" value="リセット">
+      </form>
+    </div>
   </div>
 </body>
 </html>
