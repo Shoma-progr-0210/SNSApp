@@ -31,28 +31,30 @@
       <h3>
         タイムライン(更新日時：<%=LocalDateTime.now().format(dtf) %>)
       </h3>
-      <table>
-        <tr>
-          <th>メッセージ</th>
-        </tr>
-        <% for (MessageEntity messageEntity : messageEntityList){ %>
-        <tr>
-          <td>
+      <div class="table_container">
+        <table class="message">
+          <tr>
+            <th>メッセージ</th>
+          </tr>
+          <% for (MessageEntity messageEntity : messageEntityList){ %>
+          <tr>
+            <td>
 
-            <table class="message">
-              <tr>
-                <th><%=messageEntity.getChatName() %> <font size="1">投稿日時：<%=sdf.format(messageEntity.getCreateDT()) %>
-                    更新日時：<%=sdf.format(messageEntity.getUpdateDT()) %></font></th>
-              </tr>
-              <tr>
-                <td><%=messageEntity.getMessage() %></td>
-              </tr>
-            </table>
+              <table class="message_text">
+                <tr>
+                  <th><%=messageEntity.getChatName() %> <font size="1">投稿日時：<%=sdf.format(messageEntity.getCreateDT()) %>
+                      更新日時：<%=sdf.format(messageEntity.getUpdateDT()) %></font></th>
+                </tr>
+                <tr>
+                  <td><%=messageEntity.getMessage() %></td>
+                </tr>
+              </table>
 
-          </td>
-        </tr>
-        <%} %>
-      </table>
+            </td>
+          </tr>
+          <%} %>
+        </table>
+      </div>
     </div>
   </div>
 </body>
