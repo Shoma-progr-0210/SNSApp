@@ -4,32 +4,50 @@ body {
   display: grid;
   grid-template-areas: "header header" "left main" "left main";
   grid-template-columns: 1fr 3fr;
-  grid-gap: 0px;
+  grid-gap: 1vh;
+  margin: 2px;
 }
 
 .top {
   grid-area: header;
+  height: 18vh;
+  border-radius: 24px;
   background-color: #abd9f0;
 }
 
 .side {
   grid-area: left;
-  background-color: #98fb98;
-  position: relative;
+  display: flex;
   overflow: hidden;
-  height: 100vh;
+  position: relative;
+  height: 80vh;
+  border-radius: 24px;
+  background-color: #98fb98;
 }
 
 .main {
   grid-area: main;
   margin: 0px;
-  height: 100vh;
   display: flex;
-  padding-top: 5%;
-  justify-content: center;
   overflow: hidden;
-  overflow-y : scroll;
+  height: 75vh;
+  padding-top: 5vh;
+  justify-content: center;
+  border-radius: 24px;
   background-color: #f606fa;
+}
+
+.table_container {
+  height: 60vh;
+  overflow-y: scroll;
+  /*
+  padding-bottom: 5vh;*/
+  -ms-overflow-style: none; /* IE, Edge 対応 */
+  scrollbar-width: none;
+}
+
+.table_container::-webkit-scrollbar { /* Chrome, Safari 対応 */
+  display: none;
 }
 
 /*footer {
@@ -89,7 +107,7 @@ body {
   background-color: #a62e7a;
 }
 
-div table.message {
+div table.message_text {
   border-radius: 5px;
   border: 1px #000088 solid;
 }
